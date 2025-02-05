@@ -1,0 +1,27 @@
+.welcome_banner {
+    text-align:center;
+    background-color: beige;
+    color:purple;
+    padding:10px;
+}
+
+.mainpage_text {
+    position: relative;
+    left: 15%;
+    width: 70%;
+    text-align: center;
+    padding: 25px;
+    background-color: antiquewhite;
+}
+
+.error_message {
+    text-align: center;
+    color:red;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.centered_list {
+    display:inline-block;
+    text-align:left;
+}

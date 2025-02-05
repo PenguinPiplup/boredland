@@ -1,0 +1,23 @@
+{% extends "mainapp/layout.html" %}
+{% load static %}
+
+{% block body1 %}
+<h1 class="welcome_banner">Cookie Clicker</h1>
+{% endblock %}
+
+{% block body2 %}
+{% if error_message %}
+    <div class="error_message">{{ error_message }}</div>
+{% endif %}
+
+<br>
+<h3 style="text-align:center;" id="cookie_score"> Score: 0 </h3>
+<div style="text-align:center; padding:50px;">
+    <input type="button" value="Click me!" id="cookie">
+</div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'cookieclicker/cookiecode.js' %}"></script>
+{% endblock %}

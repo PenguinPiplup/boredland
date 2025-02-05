@@ -1,0 +1,49 @@
+{% extends "mainapp/layout.html" %}
+{% load static %}
+
+{% block body1 %}
+<h1 class="welcome_banner">Register for a BoredLand Account (Free)</h1>
+{% endblock %}
+
+{% block body2 %}
+{% if error_message %}
+    <div class="error_message">{{ error_message }}</div>
+{% endif %}
+
+<br>
+<div class="mainpage_text">
+
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <input type="text", name="username", placeholder="Username", autofocus, style="margin-bottom: 5px;">
+        <br>
+        <input type="email", name="email", placeholder="Email", style="margin-bottom: 5px;">
+        <br>
+        <input type="password", id="user_password", name="password", placeholder="Password (min. 8 char)", style="margin-bottom: 5px;">
+        <br>
+        <div id="password_strength" style="display:none;">
+            <h6>Password Strength: </h6>
+        </div>
+        <input type="password", name="password2", placeholder="Password (enter again)", style="margin-bottom: 10px;">
+        <br>
+        <input type="submit", value="Register now!">
+    </form>
+    <br>
+    <p>Already have an account? Sign in <a href="{% url 'login' %}">here</a>!</p>
+</div>
+<div class="mainpage_text" style="background-color: rgb(237, 231, 231);">
+    <p>Why should I register for a BoredLand account? </p> 
+    <p>Having a BoredLand account allows you to do the following:</p>
+    <ul class="centered_list">
+        <li><strong>Publish your name when you obtain a high score</strong></li>
+        <li>Save your high scores to your account</li>
+        <li>Look back at your own personal high scores in the future</li>
+        <li>Compare your own high score against the world's high scores</li>
+        <li>More functions may also be added at a later date!</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mainapp/passwordstrength.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,5 @@
+1. Login redirect back to previous page
+3. navbar content in layout.html
+4. user login on homepage
+5. register page why an account
+6. add asynchronous password strength
