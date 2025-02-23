@@ -20,5 +20,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("mainapp.urls")),
-    path('cookieclicker', include("cookieclicker.urls"))
+    path('cookieclicker/', include("cookieclicker.urls")),
+    path('cookieclicker2/', include("cookieclicker2.urls")),
+    path('guessthenumber/', include("guessthenumber.urls")),
+    path('save_score/', include("save_score.urls"))
 ]
