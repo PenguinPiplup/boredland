@@ -1,0 +1,88 @@
+{% extends "mainapp/layout.html" %}
+{% load static %}
+
+{% block body1 %}
+<h1 class="welcome_banner">Cookie Clicker 2</h1>
+{% endblock %}
+
+{% block body2 %}
+{% if error_message %}
+    <div class="error_message">{{ error_message }}</div>
+{% endif %}
+
+<div id="cookie_instructions">
+    <h3 id="blue_header"><u>Instructions</u></h3>
+    <br>
+    <h5>Welcome to Cookie Clicker 2. </h5>
+    <br>
+    <h5 class="justified_text">
+        This is a more advanced cookie clicking game. 
+        Here, your job is to click on the cookie as many times as you can before you get bored.
+        Additionally, when you earn enough cookies, you can purchase upgrades to increase your cookie income.
+        For a simpler and more classic cookie clicking game, do visit 
+        <a href="{% url 'cookieclicker' %}">Cookie Clicker</a>.</h5>
+    <button class="game_interface_button1" id="start_game">Start!</button>
+</div>
+
+<div id="cookie_game_interface">
+    <h3 id="cookie_score"> Score: 0 </h3>
+    <br>
+    <h5 id="cookie_multiplier"> Current Multiplier: x1 </h5>
+    <h5 id="cookie_bonus"> Current Bonus: +0 </h5>
+    <h5 id="cookies_per_click"> Cookies Per Click: +1 </h5>
+    <br>
+    <img src="{% static 'cookieclicker2/choco_chip_cookie.png' %}" id="cookie">
+</div>
+
+<div class="cookie_game_shop" id="cookie_game_shop_0">
+    <h3 class="shop_title" id="shop_title">Shop (Page 1/2)</h3>
+</div>
+<div class="cookie_game_shop" id="cookie_game_shop_1">
+    <button class="shop_button_add" id="shop_1" data-value1="10" data-value2="1">Cost: 10 (+1 per click)</button>
+    <button class="shop_button_add" id="shop_2" data-value1="50" data-value2="4">Cost: 50 (+4 per click)</button>
+    <button class="shop_button_mult" id="shop_3" data-value1="100" data-value2="3">Cost: 100 (x3 per click)</button>
+    <button class="shop_button_mult" id="shop_4" data-value1="200" data-value2="4">Cost: 200 (x4 per click)</button>
+    <button class="shop_button_add" id="shop_5" data-value1="300" data-value2="10">Cost: 300 (+10 per click)</button>
+</div>
+<div class="cookie_game_shop" id="cookie_game_shop_2">
+    <button class="shop_button_mult" id="shop_6" data-value1="1000" data-value2="4">Cost: 1,000 (x4 per click)</button>
+    <button class="shop_button_mult" id="shop_7" data-value1="2500" data-value2="3">Cost: 2,500 (x3 per click)</button>
+    <button class="shop_button_add" id="shop_8" data-value1="4000" data-value2="150">Cost: 4,000 (+150 per click)</button>
+    <button class="shop_button_mult" id="shop_9" data-value1="6000" data-value2="3">Cost: 6,000 (x3 per click)</button>
+    <button class="shop_button_add" id="shop_10" data-value1="10000" data-value2="500">Cost: 10,000 (+500 per click)</button>
+</div>
+<div class="cookie_game_shop" id="cookie_game_shop_3">
+    <button class="shop_button_mult" id="shop_11" data-value1="12000" data-value2="4">Cost: 12,000 (x4 per click)</button>
+    <button class="shop_button_mult" id="shop_12" data-value1="15000" data-value2="2">Cost: 15,000 (x2 per click)</button>
+    <button class="shop_button_add" id="shop_13" data-value1="30000" data-value2="1200">Cost: 30,000 (+1200 per click)</button>
+    <button class="shop_button_mult" id="shop_14" data-value1="55000" data-value2="2">Cost: 55,000 (x2 per click)</button>
+    <button class="shop_button_add" id="shop_15" data-value1="100000" data-value2="8000">Cost: 100,000 (+8000 per click)</button>
+</div>
+<div class="cookie_game_shop" id="cookie_game_shop_4">
+    <button class="shop_button_mult" id="shop_16" data-value1="120000" data-value2="3">Cost: 120,000 (x3 per click)</button>
+    <button class="shop_button_mult" id="shop_17" data-value1="160000" data-value2="2">Cost: 160,000 (x2 per click)</button>
+    <button class="shop_button_add" id="shop_18" data-value1="235000" data-value2="7776">Cost: 235,000 (+7776 per click)</button>
+    <button class="shop_button_add" id="shop_19" data-value1="300000" data-value2="9999">Cost: 300,000 (+9999 per click)</button>
+    <button class="shop_button_mult" id="shop_20" data-value1="1000000" data-value2="5">Cost: 1,000,000 (x5 per click)</button>
+</div>
+
+<div class="cookie_buttons_div" id="cookie_other_buttons">
+    <button class="game_interface_button2" id="stop_game">End the Game</button>
+</div> 
+
+<div class="cookie_buttons_div" id="cookie_other_buttons_2">
+    <button class="game_interface_button3" id="replay">Play again</button>
+    <button class="game_interface_button5" id="leaderboards">Leaderboards</button>
+</div> 
+
+<input type="hidden" id="csrf_token" value="{{ csrf_token }}">
+
+{% endblock %}
+
+{% block stylesheet %}
+    <link href="{% static 'cookieclicker2/helper_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'cookieclicker2/cookiecode.js' %}"></script>
+{% endblock %}

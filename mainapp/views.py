@@ -5,16 +5,28 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import BoredLand_User
+from .blgames import random_game, games_list
 
 # Create your views here.
 def index(request):
+    """
+    Returns homepage
+    """
     return render(request, "mainapp/index.html")
 
 def random(request):
     """
-    Redirects user to a random website (Not developed)
+    Redirects user to a random website
     """
-    return HttpResponse("TO BE DEVELOPED")
+    return HttpResponseRedirect(reverse(random_game()))
+
+def games(request):
+    """
+    Shows list of games on the website
+    """
+    return render(request, "mainapp/games.html", {
+        "games_list": games_list
+    })
 
 
 """
@@ -40,7 +52,7 @@ def login_view(request):
         # If authentication failed, return login page again
         else:
             return render(request, "mainapp/login.html", {
-                "error_message": "Invalid username and/or password."
+                "error_message": "Invalid username and/or password. Please try again."
             })
     else:
         return render(request, "mainapp/login.html")
@@ -65,7 +77,7 @@ def register(request):
         password = request.POST["password"]
         if len(password) < 8:
             return render(request, "mainapp/register.html", {
-                "error_message": "Error: Password must contain at least 8 characters"
+                "error_message": "Error: Password must contain at least 8 characters."
             })
 
         # Ensure user typed same password twice

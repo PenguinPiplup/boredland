@@ -1,0 +1,81 @@
+{% extends "mainapp/layout.html" %}
+
+{% block body2 %}
+{% if error_message %}
+    <div class="error_message">{{ error_message }}</div>
+{% endif %}
+
+<div class="lb_page" id="lb_page_1">
+    <h3 class="blue_header_lb"><u>Leaderboards (Top 10 Scores)</u></h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Username</th>
+                <th scope="col">Score</th>
+                <th scope="col">Game</th>
+                <th scope="col">Date/Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for score in scores %}
+            <tr>
+                <th scope="row">{{ score.ranking }}</th>
+                <td>{{ score.score.user }}</td>
+                <td>{{ score.score.score }}</td>
+                <td>{{ score.score.game.game_name }}</td>
+                <td>{{ score.score.datetime }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    {% if user.is_authenticated %}
+        <h5>My current highest ranking: <strong>{{ user_ranking }}</strong></h5>
+        <h5>My current highest score: <strong>{{ user_highscore }}</strong></h5>
+    {% else %}
+        <h5> Please login to view your rankings and high scores. </h5>
+    {% endif %}
+    <br>
+    <button class="game_interface_button3" id="replay2">Play again</button>
+    <button class="game_interface_button4" id="my_score">My Scores</button>
+</div>
+
+<div class="lb_page" id="lb_page_2" style="display:none;">
+    <h3 class="pink_header_lb"><u>My Scores</u></h3>
+    {% if user.is_authenticated %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Game</th>
+                    <th scope="col">Date/Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for score in user_scores %}
+                <tr>
+                    <th scope="row">{{ score.ranking }}</th>
+                    <td>{{ score.score.user }}</td>
+                    <td>{{ score.score.score }}</td>
+                    <td>{{ score.score.game.game_name }}</td>
+                    <td>{{ score.score.datetime }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h5>My current highest ranking: <strong>{{ user_ranking }}</strong></h5>
+        <h5>My current highest score: <strong>{{ user_highscore }}</strong></h5>
+    {% else %}
+        <br>
+        <h5> Please login to view your rankings and high scores. </h5>
+    {% endif %}
+    <br>
+    <button class="game_interface_button3" id="replay3">Play again</button>
+    <button class="game_interface_button5" id="global_score">Leaderboards</button>
+</div>
+
+{% endblock %}

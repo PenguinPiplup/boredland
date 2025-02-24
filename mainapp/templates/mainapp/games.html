@@ -1,0 +1,22 @@
+{% extends "mainapp/layout.html" %}
+
+{% block body1 %}
+<h1 class="welcome_banner">BoredLand Games</h1>
+{% endblock %}
+
+{% block body2 %}
+<div class="gamespage_filler">
+    <section class="mainpage_text">
+        <h2>List of Games:</h2>
+        <ol class="mainpage_para">
+        {% for game in games_list %}
+            <hr width="100%" size="3" color="gray">
+            <li>
+                <a href="{% url game.game_name %}">{{game.game_name}}</a>
+            </li>
+        {% endfor %}
+        </ol>
+    </section>
+</div>
+
+{% endblock %}

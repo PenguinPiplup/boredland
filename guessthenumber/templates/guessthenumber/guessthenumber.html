@@ -1,0 +1,79 @@
+{% extends "mainapp/layout.html" %}
+{% load static %}
+
+{% block body1 %}
+<h1 class="welcome_banner">Guess The Number</h1>
+{% endblock %}
+
+{% block body2 %}
+{% if error_message %}
+    <div class="error_message">{{ error_message }}</div>
+{% endif %}
+
+<section id="gtn_instructions">
+    <h3 id="blue_header"><u>Instructions</u></h3>
+    <br>
+    <h5>Welcome to Guess The Number.</h5>
+    <br>
+    <h5 class="justified_text_squeeze">
+        In this game, a number will be randomly generated, and you will have to guess the hidden number correctly within the allocated 
+        number of tries and time given, in order to earn points.
+    </h5>
+    <h5 class="justified_text_squeeze">
+        <u>Rules:</u>
+        <ul>
+            <li>You are given a fixed number of tries per game to guess the hidden number. </li>
+            <li>Each game will have a time limit of 60 seconds. </li>
+            <li>For each correct guess, you will automatically earn at least 100 points (increases with a higher level).</li>
+            <li>Additionally, you can earn extra points if you guess the number more quickly / have more remaining unused tries.</li>
+            <li>The game ends when you use up all the tries / all the time given but fail to guess the number correctly.</li>
+            <li>To help you, a range of numbers will be provided, and the hidden number will fall within this range of numbers. </li>
+            <li>Additionally, each time you make a wrong guess, the game will inform you whether the hidden number is higher or lower than your guess.</li>
+            <li>As you guess more numbers correctly, you will level up. This comes with harder guessing problems (larger range of numbers), but also more tries and increased score earned.</li>
+        </ul>
+    </h5>
+    <button class="game_interface_button1" id="start_game">Start!</button>
+</section>
+
+<section>
+    <div id="game_interface">
+        <h3 id="gtn_score"> Score: 0 </h3>
+        <br>
+        <h5 id="gtn_level">Level: 1</h5>
+        <h5 id="gtn_guesses"> Tries Left: 10 </h5>
+        <br>
+        <h5>Time Left:  </h5> <h5 id="timer"> 60 seconds </h5>
+        <br>
+
+        <h5 id="guess_range"> Guess a hidden number between 0 and 1000 inclusive. </h5>
+        <br>
+        <h5>My Guess: </h5><input type="number" id="user_guess" name="Guess" placeholder="Guess a Number!">
+        <br>
+        <button class="submit_guess_button" id="verify_guess">Submit Guess</button>
+        <br>
+        <h5 id="higher_or_lower"></h5>
+    </div>
+    
+    <div class="buttons_div" id="other_buttons">
+        <button class="game_interface_button2" id="stop_game">End the Game</button>
+    </div> 
+    
+    <div class="buttons_div" id="other_buttons_2">
+        <button class="game_interface_button3" id="replay">Play again</button>
+        <button class="game_interface_button5" id="leaderboards">Leaderboards</button>
+    </div> 
+</section>
+
+
+
+<input type="hidden" id="csrf_token" value="{{ csrf_token }}">
+
+{% endblock %}
+
+{% block stylesheet %}
+    <link href="{% static 'guessthenumber/helper_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'guessthenumber/gtncode.js' %}"></script>
+{% endblock %}

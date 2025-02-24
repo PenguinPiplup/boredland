@@ -5,26 +5,28 @@
 {% endblock %}
 
 {% block body2 %}
+<div class="login_filler"></div>
 {% if error_message %}
     <div class="error_message">{{ error_message }}</div>
 {% endif %}
 
-<br>
-<div class="mainpage_text">
+<div class="login_registration_div">
 
     <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
-        <input type="text", name="username", placeholder="Username", autofocus, style="margin-bottom: 5px;">
+        <input type="text", name="username", placeholder="Username", autofocus, style="margin-bottom: 5px;", size="20">
         <br>
-        <input type="password", name="password", placeholder="Password", style="margin-bottom: 10px;">
+        <input type="password", name="password", placeholder="Password", style="margin-bottom: 15px;", size="20">
         <br>
         <input type="submit", value="Login">
     </form>
     <br>
+    <br>
     <p>Don't have a BoredLand account yet? Register <a href="{% url 'register' %}">here</a> for a free account!</p>
     <br>
+    <br>
 
-    <p>Logging into your BoredLand account allows you to look back at your own personal high scores, and 
+    <p class="login_footer">Logging into your BoredLand account allows you to look back at your own personal high scores, and 
        compare yourself against the world's high scores! </p>
 
 </div>

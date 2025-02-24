@@ -1,0 +1,35 @@
+body {
+    background-color: aquamarine;
+}
+
+#cookie_instructions {
+    position: relative;
+    left: 33%;
+    width: 34%;
+    background-color: aquamarine; 
+    text-align:center; 
+    padding-top:10vh;
+    display:block;
+}
+
+#blue_header {
+    color:rgb(26, 24, 134);
+}
+
+#cookie_game_interface {
+    margin-top:3vh;
+    text-align:center; 
+    padding:50px;
+    display:none;
+}
+
+#cookie_game_popup {
+    display:none;
+    text-align:center; 
+}
+
+.cookie_buttons_div {
+    margin-top:5vh;
+    display:none;
+    text-align: center;
+}

@@ -1,0 +1,83 @@
+body {
+    background-color: lavender;
+}
+
+#gtn_instructions {
+    position: relative;
+    left: 22%;
+    width: 56%;
+    background-color: lavender; 
+    text-align:center; 
+    padding-top:5vh;
+    display:block;
+}
+
+.justified_text_squeeze {
+    text-align: justify;
+    padding-bottom: 20px;
+    line-height: 1.5;
+}
+
+#blue_header {
+    color:rgb(26, 24, 134);
+}
+
+#game_interface {
+    margin-top:3vh;
+    text-align:center; 
+    padding: 20px;
+    display:none;
+}
+
+#gtn_score {
+    color: indigo;
+}
+
+#timer {
+    margin-bottom: 30px;
+}
+
+#guess_range {
+    margin-bottom: 40px;
+}
+
+
+#user_guess {
+    background-color: mintcream;
+    padding:15px;
+    font-size:22px;
+    text-align: center;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.submit_guess_button {
+    border-radius: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px; 
+    padding-right: 15px; 
+    font-size: 18px;
+    min-width: 150px;
+    margin: 20px;
+    background-color: lemonchiffon;
+}
+
+.submit_guess_button:hover {
+    background-color: paleturquoise;
+}
+
+#higher_or_lower {
+    margin-top: 10px;
+    color: red;
+}
+
+.buttons_div {
+    margin-top:2vh;
+    display:none;
+    text-align: center;
+}
+
+.game_interface_button5:hover {
+    background-color: aquamarine;
+}

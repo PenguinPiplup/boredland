@@ -10,12 +10,43 @@
     <div class="error_message">{{ error_message }}</div>
 {% endif %}
 
-<br>
-<h3 style="text-align:center;" id="cookie_score"> Score: 0 </h3>
-<div style="text-align:center; padding:50px;">
-    <input type="button" value="Click me!" id="cookie">
+<div id="cookie_instructions">
+    <h3 id="blue_header"><u>Instructions</u></h3>
+    <br>
+    <h5>Welcome to Cookie Clicker. </h5>
+    <br>
+    <h5 class="justified_text">
+        This is an extremely simple clicking game. 
+        In this game, your job is to click on the cookie as many times as you can before you get bored.
+        For a cookie clicking game with more features, do check out 
+        <a href="{% url 'cookieclicker2' %}">Cookie Clicker 2</a>.</h5>
+    <button class="game_interface_button1" id="start_game">Start!</button>
 </div>
 
+<div id="cookie_game_interface">
+    <h3 id="cookie_score"> Score: 0 </h3>
+    <br>
+    <img src="{% static 'cookieclicker/choco_chip_cookie.png' %}" id="cookie">
+</div>
+
+
+<h5 id="cookie_game_popup"></h5>
+
+<div class="cookie_buttons_div" id="cookie_other_buttons">
+    <button class="game_interface_button2" id="stop_game">End the Game</button>
+</div> 
+
+<div class="cookie_buttons_div" id="cookie_other_buttons_2">
+    <button class="game_interface_button3" id="replay">Play again</button>
+    <button class="game_interface_button5" id="leaderboards">Leaderboards</button>
+</div> 
+
+<input type="hidden" id="csrf_token" value="{{ csrf_token }}">
+
+{% endblock %}
+
+{% block stylesheet %}
+    <link href="{% static 'cookieclicker/helper_styles.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block script %}

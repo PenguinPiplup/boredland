@@ -1,27 +1,122 @@
+body {
+    background-color: antiquewhite;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
 .welcome_banner {
     text-align:center;
     background-color: beige;
+    font-size:32px;
     color:purple;
-    padding:10px;
+    padding:15px;
+    margin-bottom: 0px;
+}
+
+.mainpage_filler {
+    padding: 12vh;
+}
+
+.gamespage_filler {
+    padding: 2vh;
+}
+
+.login_filler {
+    padding: 3vh;
+    background-color: antiquewhite;
 }
 
 .mainpage_text {
     position: relative;
-    left: 15%;
-    width: 70%;
+    left: 25%;
+    width: 50%;
     text-align: center;
-    padding: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mainpage_para {
+    text-align: left;
+    font-size: 20px;
+}
+
+.login_registration_div {
+    padding-top: 3vh;
+    padding-bottom: 5vh;
     background-color: antiquewhite;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.login_footer {
+    position: relative;
+    left: 30%;
+    width: 40%;
+    font-size:22px; 
+    color:rgb(44, 10, 139);
 }
 
 .error_message {
     text-align: center;
     color:red;
-    margin-top: 15px;
+    background-color: antiquewhite;
+    padding-top: 3vh;
     font-size: 20px;
 }
 
 .centered_list {
     display:inline-block;
     text-align:left;
+}
+
+.simple_centered_interface {
+    text-align:center; 
+    padding:50px;
+}
+
+.game_interface_button1 {
+    border-radius: 25px; 
+    padding: 20px;
+    font-size: 20px;
+    background-color: powderblue;
+}
+
+.game_interface_button1:hover {
+    background-color: orange;
+}
+
+.game_interface_button2,.game_interface_button3,.game_interface_button4,.game_interface_button5 {
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px; 
+    padding-right: 20px; 
+    font-size: 20px;
+    background-color: blanchedalmond;
+}
+    
+.game_interface_button2:hover {
+    background-color: orangered;
+}
+    
+.game_interface_button3:hover {
+    background-color: aqua;
+}
+
+.game_interface_button4:hover {
+    background-color: pink;
+}
+
+.game_interface_button5:hover {
+    background-color: lightgreen;
+}
+
+.justified_text {
+    text-align:justify;
+    padding-bottom: 40px;
+    line-height: 1.5;
+}
+
+.styleless_link {
+    color:black; 
+    text-decoration:none;
 }

@@ -1,0 +1,15 @@
+{% extends "mainapp/game_leaderboards.html" %}
+{% load static %}
+
+{% block body1 %}
+<h1 class="welcome_banner">Cookie Clicker Leaderboards</h1>
+{% endblock %}
+
+{% block stylesheet %}
+    <link href="{% static 'cookieclicker/helper_styles.css' %}" rel="stylesheet">
+    <link href="{% static 'mainapp/lb_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mainapp/lb_code.js' %}"></script>
+{% endblock %}
